@@ -1,0 +1,6 @@
+*~
+*.beam
+_build/
+src/fieldmask_lexer.erl
+src/fieldmask_parser.erl
+rebar.lock
