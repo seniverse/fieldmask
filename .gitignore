@@ -1,5 +1,6 @@
 *~
 *.beam
+*.crashdump
 _build/
 src/fieldmask_lexer.erl
 src/fieldmask_parser.erl

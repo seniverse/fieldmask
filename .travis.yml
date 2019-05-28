@@ -1,0 +1,8 @@
+language: erlang
+otp_release:
+- 22.0
+- 21.3
+- 20.3
+- 19.3
+script:
+- rebar3 ct --readable=false
