@@ -6,3 +6,5 @@ otp_release:
 - 19.3
 script:
 - rebar3 ct --readable=false
+after_success:
+- rebar3 as test coveralls send
