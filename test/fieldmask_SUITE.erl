@@ -38,13 +38,11 @@ test_mask(_Config) ->
               ]
          },
 
-    Data = fieldmask:mask('*', Data),
+    Data = fieldmask:mask("*", Data),
 
-    %% fields=kind
     Part1 = #{<<"kind">> => <<"demo">>},
-    Part1 = fieldmask:mask([<<"kind">>], Data),
+    Part1 = fieldmask:mask("kind", Data),
 
-    %% fields=kind,items/title
     Part2 =
         #{<<"kind">> => <<"demo">>,
           <<"items">> =>
@@ -52,7 +50,7 @@ test_mask(_Config) ->
                #{<<"title">> => <<"First title">>},
                #{<<"title">> => <<"Second title">>}
               ]},
-    Part2 = fieldmask:mask([<<"kind">>, {<<"items">>, [<<"title">>]}], Data),
+    Part2 = fieldmask:mask("kind,items/title", Data),
 
     Part3 =
         #{<<"kind">> => <<"demo">>,
@@ -63,7 +61,7 @@ test_mask(_Config) ->
                #{<<"title">> => <<"Second title">>,
                  <<"status">> => <<"pending">>}
               ]},
-    Part3 = fieldmask:mask([<<"kind">>, {<<"items">>, [<<"title">>, <<"status">>]}], Data),
+    Part3 = fieldmask:mask("kind,items(title,status)", Data),
 
     Part4 =
         #{<<"items">> =>
@@ -88,8 +86,7 @@ test_mask(_Config) ->
               ]
          },
 
-    %% items/pagemap/*
-    Part4 = fieldmask:mask([{<<"items">>, [{<<"pagemap">>, '*'}]}], Data),
+    Part4 = fieldmask:mask("items/pagemap/*", Data),
 
     Part5 =
         #{<<"items">> =>
@@ -113,8 +110,7 @@ test_mask(_Config) ->
               ]
          },
 
-    %% items/pagemap/*/title
-    Part5 = fieldmask:mask([{<<"items">>, [{<<"pagemap">>, {'*', [<<"title">>]}}]}], Data),
+    Part5 = fieldmask:mask("items/pagemap/*/title", Data),
     ok.
 
 test_lex_error(_Config) ->

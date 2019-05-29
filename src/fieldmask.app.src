@@ -1,6 +1,6 @@
 {application, fieldmask,
  [
-  {description, "Implements Google Partial Response/json-mask in Erlang."},
+  {description, "Implements Google Partial Response protocol in Erlang."},
   {vsn, "git"},
   {modules, []},
   {registered, []},

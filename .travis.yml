@@ -7,6 +7,7 @@ before_install:
 script:
 - rebar3 ct --readable=false
 - rebar3 compile
+- rebar3 edoc
 after_success:
 - rebar3 as test coveralls send
 deploy:

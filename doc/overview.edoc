@@ -1,0 +1,27 @@
+@title fieldmask
+@doc fieldmask implements Google Partial Response Protocol in Erlang.
+
+Mask of fieldmask is the same as `fields' parameter of Google+ API, for example, `<<"a,b">>' means the fields you want to keep is `"a"' and `"b"'.
+
+```
+1> Mask = <<"a,b">>.
+<<"a,b">>
+'''
+
+And fieldmask use map object format of <a href="https://github.com/sile/jsone">jsone</a> to represent a JSON value.
+
+```
+2> Value = jsone:decode(<<"{\"a\":1, \"b\": 2, \"c\": 3}">>).
+#{<<"a">> => 1,<<"b">> => 2,<<"c">> => 3}.
+'''
+
+Call `fieldmask:mask/2' to get the specific parts of a value you've selected.
+
+```
+3> fieldmask:mask(Mask, Value).
+#{<<"a">> => 1,<<"b">> => 2}
+'''
+
+@reference Google+ API <a href="https://developers.google.com/+/web/api/rest/#partial-response">Partial Responses</a>
+@reference NPM package <a href="https://www.npmjs.com/package/json-mask">json-mask</a>
+@reference PyPI package <a href="https://pypi.org/project/jsonmask/">jsonmask</a>
