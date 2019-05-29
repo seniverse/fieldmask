@@ -2,10 +2,10 @@
  [
   {description, "Implements Google Partial Response protocol in Erlang."},
   {vsn, "git"},
-  {modules, []},
   {registered, []},
   {applications, []},
   {env, []},
-  {licenses, ["Apache"]}
+  {licenses, ["Apache"]},
+  {links,[{"GitHub","https://github.com/seniverse/fieldmask"}]}
  ]
 }.
