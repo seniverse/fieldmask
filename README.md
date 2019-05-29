@@ -7,7 +7,7 @@
 ![hex.pm license](https://img.shields.io/hexpm/l/fieldmask.svg)
 ![GitHub top language](https://img.shields.io/github/languages/top/seniverse/fieldmask.svg)
 
-fieldmask implements Google [Partial Responses](https://developers.google.com/+/web/api/rest/#partial-response) protocol in Erlang, like [json-mask](https://www.npmjs.com/package/json-mask) in JavaScript and [jsonmask](https://pypi.org/project/jsonmask/) in Python.
+fieldmask implements [Partial Responses](https://developers.google.com/+/web/api/rest/#partial-response) protocol of Google+ API in Erlang, like [json-mask](https://www.npmjs.com/package/json-mask) in JavaScript and [jsonmask](https://pypi.org/project/jsonmask/) in Python.
 
 Mask of fieldmask is the same as `fields` parameter of Google+ API, for example, `<<"a,b">>` means the fields you want to keep is `"a"` and `"b"`.
 
